@@ -1,0 +1,13 @@
+# SCM-Python
+Making python project using git and github
+Class Record Management System
+Press 1: To see the Dataframe: Attendance
+Press 2: To see the Dataframe: ST 1, ST 2, ETE 1 Result.
+Press 3: To check the attendance of any particular student
+Press 4: To check the record of any particular student
+Press 5: To see minimum marks in each subject
+Press 6: To see maximum marks in each subject
+Press 7: To see the topper name
+Press 8: To see the student with 100% attendance
+Press 9: To visualize the class attendance
+Press 10: To visualize the class performance in ST 1, ST 2, ETE 1and Show Progress Report
