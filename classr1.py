@@ -100,6 +100,7 @@ while True:
         print("ERROR: 101/102",end="-")
     # to check the authenticity of the user
     while (str1 == "Ajay Kumar" and str2 == "AjayKumar@22") or (str1 == "Gunjan Thakur" and str2 == "GunjanThakur@22") or (str1 == "Gayatri Koshal" and str2 == "GayatriKoshal@22"):
+        print("What do you want to do? ")
     else:
         print("(Invalid UserName/Password)")
 else:
