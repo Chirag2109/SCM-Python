@@ -101,6 +101,145 @@ while True:
     # to check the authenticity of the user
     while (str1 == "Ajay Kumar" and str2 == "AjayKumar@22") or (str1 == "Gunjan Thakur" and str2 == "GunjanThakur@22") or (str1 == "Gayatri Koshal" and str2 == "GayatriKoshal@22"):
         print("What do you want to do? ")
+	
+	N = int(input("What do you want to do? "))
+        # to see the Dataframe: Attendance
+        while N == 1:
+            print(df)
+            N=0
+        # to see the Dataframe: ST1, ST2, ETE1 Result and progress report
+        while N == 2:
+            var = input()
+            if var == "ST 1":
+                print(df1)
+            elif var == "ST 2":
+                print(df2)
+            elif var == "ETE 1":
+                print(df3)
+            elif var == "Show Overall Progress Report":
+                print(df6)
+            elif var == "Show Subjectwise Progress Report":
+                while True:
+                    s = input("Enter the Subject: ")
+                    if s == "MCP":
+                        print(df4)
+                    elif s == "Python":
+                        print(df5)
+                    else:
+                        print("Subject Not Found")
+                        break
+            else:
+                print("Invalid TestName")
+                N=0
+        # to check the attendance of any particular student
+        while N == 3:
+            S4=int(input("Enter the Student Roll Number: "))
+            data2 = df.loc[S4]
+            print("\nStudent Attendance%: \n\n",data2)
+            N=0
+        # to check the record of any particular student
+        while N == 4:
+            test=input("Enter the test name: ")
+            if test == "ST 1":
+                S5=int(input("Enter the Student Roll Number: "))
+                data3 = df1.loc[S5]
+                print("\nStudent Result: \n\n",data3)
+            elif test == "ST 2":
+                S5=int(input("Enter the Student Roll Number: "))
+                data4 = df2.loc[S5]
+                print("\nStudent Result: \n\n",data4)
+            elif test == "ETE 1":
+                S5=int(input("Enter the Student Roll Number: "))
+                data5 = df2.loc[S5]
+                print("\nStudent Result: \n\n",data5)
+            elif test == "Show Overall Progress Report":
+                S5=int(input("Enter the Student Roll Number: "))
+                x1=[]
+                for i in df6.columns:
+                    x1.append(i)
+                x1.remove("Name")
+                y1=[]
+                z1=''
+                for i in df6.loc[S5]:
+                    y1.append(i)
+                a=y1[1:]
+                if a[0]>a[2]:
+                    z1=z1+"r"
+                else:
+                    z1=z1+"g"
+                plt.figure()
+                plt.plot(x1, y1[1:], color=z1)
+                plt.title('Student Progress')
+                plt.ylabel('Percentage %')
+                plt.xlabel('Class Test')
+                plt.show()
+            elif test == "Show Subjectwise Progress Report":
+                while True:
+                    s=input("Enter the Subject Name: ")
+                    if s == "MCP":
+                        S5=int(input("Enter the Student Roll Number: "))
+                        x1=[]
+                        for i in df4.columns:
+                            x1.append(i)
+                        x1.remove("Name")
+                        y1=[]
+                        z1=''
+                        for i in df4.loc[S5]:
+                            y1.append(i)
+                        a=y1[1:]
+                        if a[1]>a[2]:
+                            z1=z1+"r"
+                        else:
+                            z1=z1+"g"
+                        plt.figure()
+                        plt.plot(x1, y1[1:], color=z1)
+                        plt.title('Student Progress')
+                        plt.ylabel('MCP')
+                        plt.xlabel('Class Test')
+                        plt.show()
+                    elif s == "Python":
+                        S5=int(input("Enter the Student Roll Number: "))
+                        x1=[]
+                        for i in df5.columns:
+                            x1.append(i)
+                        x1.remove("Name")
+                        y1=[]
+                        z1=''
+                        for i in df5.loc[S5]:
+                            y1.append(i)
+                        a=y1[1:]
+                        if a[1]>a[2]:
+                            z1=z1+"r"
+                        else:
+                            z1=z1+"g"
+                        plt.figure()
+                        plt.plot(x1, y1[1:], color=z1)
+                        plt.title('Student Progress')
+                        plt.ylabel('Python')
+                        plt.xlabel('Class Test')
+                        plt.show()
+                    else:
+                        print("Subject Not Found")
+                        break
+            else:
+                print("Invalid TestName")
+                N=0
+        # to show minimum marks of each subject
+        while N == 5:
+            test=input("Enter the test name: ")
+            if test == "ST 1":
+                print("Minimum Marks in MCP, Python, MCP(Practical), Python(Practical)", df1['MCP'].min(), df1['Python'].min(), df1['MCP(Practical)'].min(), df1['Python(Practical)'].min())
+                df1.min(numeric_only=True)
+            elif test == "ST 2":
+                print("Minimum Marks in MCP, Python, MCP(Practical), Python(Practical)", df2['MCP'].min(), df2['Python'].min(), df2['MCP(Practical)'].min(), df2['Python(Practical)'].min())
+                df2.min(numeric_only=True)
+            elif test == "ETE 1":
+                print("Minimum Marks in MCP, Python, MCP(Practical), Python(Practical)", df3['MCP'].min(), df3['Python'].min(), df3['MCP(Practical)'].min(), df3['Python(Practical)'].min())
+                df3.min(numeric_only=True)
+            else:
+                print("Invalid TestName")
+                N=0
+
     else:
         print("(Invalid UserName/Password)")
 else:
