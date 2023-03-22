@@ -99,7 +99,7 @@ while True:
     else:
         print("ERROR: 101/102",end="-")
     # to check the authenticity of the user
-    while (str1 == "Ajay Kumar" and str2 == "AjayKumar@22") or (str1 == "Gunjan Thakur" and str2 == "GunjanThakur@22") or (str1 == "Gayatri Koshal" and str2 == "GayatriKoshal@22"):
+    while (str1 == "Garima Chopra" and str2 == "GarimaChopra@22"):
     	N = int(input("What do you want to do? "))
         # to see the Dataframe: Attendance
         while N == 1:
